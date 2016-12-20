@@ -15,13 +15,20 @@ describe("TipCalculator", function() {
 
   it("stores the tip rate", function() {
     calc.tipRate();
-    expect(calc._tip).toEqual(0.25);
+    expect(calc._tipPercentage).toEqual(0.25);
   });
 
   it("displays the tip", function() {
     calc._bill = 100;
-    calc._tip = 0.25;
+    calc._tipPercentage = 0.25;
     expect(calc.displayTip()).toEqual("£25.00");
+  });
+
+  it("displays the total", function() {
+    calc._bill = 100;
+    calc._tipPercentage = 0.25;
+    calc._tipTotal = 25.00;
+    expect(calc.displayTotal()).toEqual("£125.00");
   });
 
 });

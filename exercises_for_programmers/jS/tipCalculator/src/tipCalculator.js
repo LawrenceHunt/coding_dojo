@@ -1,6 +1,8 @@
 function TipCalculator () {
   this._bill = 0;
-  this._tip = 0;
+  this._tipPercentage = 0;
+  this._tipTotal = 0;
+  this._billTotal = 0;
 }
 
 TipCalculator.prototype.requestBill = function () {
@@ -9,11 +11,17 @@ TipCalculator.prototype.requestBill = function () {
 
 TipCalculator.prototype.tipRate = function () {
   var tip = prompt("What is the tip percentage?");
-  this._tip = (tip >= 1) ? tip * 0.01 : tip;
+  this._tipPercentage = (tip >= 1) ? tip * 0.01 : tip;
 };
 
 TipCalculator.prototype.displayTip = function () {
-  var tipTotal = (this._bill * this._tip).toFixed(2);
-  var formatTip = "£" + (tipTotal).toString();
+  this._tipTotal = (this._bill * this._tipPercentage);
+  var formatTip = "£" + ((this._tipTotal).toFixed(2)).toString();
   return formatTip;
+};
+
+TipCalculator.prototype.displayTotal = function () {
+  this._billTotal = (this._bill + this._tipTotal);
+  var formatTotal = "£" + (this._billTotal.toFixed(2)).toString();
+  return formatTotal;
 };
