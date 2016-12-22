@@ -1,8 +1,12 @@
-The 'Hello, World' program is the first program you learn to write in many languages, but it doesn't involve any input,
-Create a program that prompts for your name and prints a greeting using your name.
+Write a program that prompts for two numbers. Print the sum, difference, product, quotient of those numbers as shown in the example output.
 
 ```
 Example Output:
-What is your name? Brian
-Hello, Brian, nice to meet you!
+What is the first number? 10
+What is the second number? 5
+
+10 + 5 = 15
+10 - 5 = 5
+10 * 5 = 50
+10 / 5 = 2 
 ```

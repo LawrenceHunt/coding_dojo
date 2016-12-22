@@ -1,8 +1,9 @@
-The 'Hello, World' program is the first program you learn to write in many languages, but it doesn't involve any input,
-Create a program that prompts for your name and prints a greeting using your name.
+Create a program that determines how many years you have left until retirement and year you can retire. It should prompt for your current age and the age you want to retire and display the output as shown in the example that follows:
 
 ```
 Example Output:
-What is your name? Brian
-Hello, Brian, nice to meet you!
+What is your current age? 25
+At what age would you like to retire? 65
+You have 40 years left until you can retire.
+It's 2015, so you can retire in 2055.
 ```
