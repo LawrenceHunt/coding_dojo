@@ -10,19 +10,10 @@ describe TipCalc do
 	end
 
 	describe "#collect_input" do
-		before do
-			$stdin = StringIO.new("200")
-		end
-
-		after do
-			$stdin = STDIN
-		end
-
 		it 'collect user input' do
-			tip_calc.collect_input
-			expect(tip_calc.collect_input).to be == "200"
+			allow(tip_calc).to receive(:gets) { "200\n" }
+			expect(tip_calc.bill_total).to eq "200"
 		end
 	end
 
 end
-
