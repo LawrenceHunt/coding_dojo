@@ -12,6 +12,9 @@ the following triangle:
 #######
 */
 
+for (var i = "#"; i.length < 8; i+= "#") {
+  console.log(i);
+}
 
 /*
 FizzBuzz
@@ -25,6 +28,21 @@ for numbers that are divisible by both 3 and 5
 (and still print "Fizz" or "Buzz" for numbers divisible
 by only one of those).
 */
+
+for(var i = 1; i <= 100; i++) {
+  if(i % 15 === 0) {
+    console.log('Fizzbuzz');
+  }
+  if(i % 5 === 0) {
+    console.log('Buzz');
+  }
+  if(i % 3 === 0) {
+    console.log('Fizz');
+  }
+  else console.log(i);
+}
+
+
 
 /*
 Chess board
@@ -50,3 +68,19 @@ define a variable size = 8 and change the program so
 that it works for any size, outputting a grid of the given width
 and height.
 */
+
+
+var table = "";
+var tableSize = 8;
+
+for (var i = 0; i < tableSize; i++) {
+  for (var j = 0; j < tableSize; j++){
+    if ((i + j) % 2 === 0) {
+      table += " ";
+    }
+    else table += "#";
+  }
+  table += "\n";
+}
+
+console.log(table);
