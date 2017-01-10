@@ -13,6 +13,9 @@ console.log(min(0, -10));
 // → -10
 */
 
+function min (x, y) {
+  return x > y ? y : x;
+}
 
 /*
 Recursion
