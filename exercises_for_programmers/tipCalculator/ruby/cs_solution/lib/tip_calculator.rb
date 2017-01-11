@@ -27,5 +27,12 @@ class TipCalc
     @final_total = @bill_total.to_i + @tip_total
   end
 
+  def display_tip
+    "Tip: £#{@tip_total}"
+  end
+
+  def display_total
+    "Total: £#{@final_total}"
+  end
 
 end

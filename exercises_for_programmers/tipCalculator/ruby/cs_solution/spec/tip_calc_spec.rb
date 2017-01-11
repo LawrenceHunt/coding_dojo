@@ -66,7 +66,7 @@ describe TipCalc do
 	describe "#display_total" do
 		it "prints the total amount" do
 			tip_calc.instance_variable_set(:@final_total, 230)
-			expect(tip_calc.display_tip).to eq ("Total: £230")
+			expect(tip_calc.display_total).to eq ("Total: £230")
 		end
 	end
 end
