@@ -43,12 +43,13 @@ describe TipCalc do
 
 	describe "#just_the_tip_plz" do
 		before(:example) do
-			allow(tip_calc).to receive(:bill_total) { "200" }
-			allow(tip_calc).to receive(:tip_rate) { "15" }
+
+			# allow(tip_calc).to receive(:bill_total) { "200" }
+			# allow(tip_calc).to receive(:tip_rate) { "15" }
 		end
 
 		it 'calculates the tip' do
-			p tip_calc.bill_total
+			tip_calc = double("Anything", :bill_total => "200", :tip_rate => "15")
 			tip_calc.just_the_tip_plz
 			expect(tip_calc.tip_total).to eq(30)
 		end

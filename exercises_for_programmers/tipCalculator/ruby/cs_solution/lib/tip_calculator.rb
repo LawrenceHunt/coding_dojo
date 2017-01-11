@@ -19,4 +19,9 @@ class TipCalc
     @tip_rate = gets.chomp
 	end
 
+  def just_the_tip_plz
+    @tip_total = @bill_total.to_i * @tip_rate.to_i / 100
+  end
+
+  private
 end
