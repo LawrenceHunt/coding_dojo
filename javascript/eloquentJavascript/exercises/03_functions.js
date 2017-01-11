@@ -45,6 +45,18 @@ console.log(isEven(-1));
 // → ??
 */
 
+
+function isEven (num) {
+  var newNum = Math.abs(num);
+  if (newNum === 0)
+    return true;
+  else if (newNum === 1)
+    return false;
+  else
+    return isEven(newNum -2);
+}
+
+
 /*
 Bean counting
 
