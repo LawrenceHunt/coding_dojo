@@ -22,19 +22,35 @@ describe TipCalc do
 	end
 
 	describe "#bill_prompt" do
-		it 'prompts the user to input the bill' do
-			#STDOUT.should_receive(:puts).with("What is the bill?")
-			allow(tip_calc.bill_prompt).to receive(:collect_input) { "200\n" }
-			expect(STDOUT).to receive(:puts) {"What is the bill?"}
+
+		it 'collects bill_total' do
+			allow(tip_calc).to receive(:gets) { "200\n" }
 			tip_calc.bill_prompt
+			expect(tip_calc.bill_total).to eq "200"
 		end
+
 	end
 
-	describe "#collect_input" do
-		it 'collect user input' do
-			allow(tip_calc.collect_input).to receive(:gets) { "200\n" }
-			#tip_calc.bill_prompt
-			expect(tip_calc.bill_total).to eq "200"
+	describe "#tip_prompt" do
+
+		it 'prompts user for tip_rate' do
+			allow(tip_calc).to receive(:gets) { "15\n" }
+			tip_calc.tip_prompt
+			expect(tip_calc.tip_rate).to eq "15"
+		end
+
+	end
+
+	describe "#just_the_tip_plz" do
+		before(:example) do
+			allow(tip_calc).to receive(:bill_total) { "200" }
+			allow(tip_calc).to receive(:tip_rate) { "15" }
+		end
+
+		it 'calculates the tip' do
+			p tip_calc.bill_total
+			tip_calc.just_the_tip_plz
+			expect(tip_calc.tip_total).to eq(30)
 		end
 	end
 

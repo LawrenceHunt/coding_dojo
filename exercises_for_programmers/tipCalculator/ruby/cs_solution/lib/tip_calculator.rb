@@ -11,11 +11,12 @@ class TipCalc
 
 	def bill_prompt
 		puts "What is the bill?"
-    @bill_total = collect_input
+    @bill_total = gets.chomp
 	end
 
-  def collect_input
-    gets.chomp
-  end
+  def tip_prompt
+		puts "What is the tip?"
+    @tip_rate = gets.chomp
+	end
 
 end
