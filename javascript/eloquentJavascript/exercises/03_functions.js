@@ -81,13 +81,7 @@ characters). Rewrite countBs to make use of this new function.
 */
 
 function countBs(str) {
-  var count = 0;
-  for (var i = 0; i < str.length; i++) {
-    if (str.charAt(i) == "B") {
-      count ++;
-    }
-  }
-  return count;
+  return countChar(str, "B");
 }
 
 function countChar(str,char) {
