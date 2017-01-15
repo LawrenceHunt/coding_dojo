@@ -149,15 +149,21 @@ console.log(arrayToList([10,20]));
 
 
 function listToArray(list) {
-
+  var arr = [];
+  for (var node = list; node; node = node.rest) {
+    arr.push(node.value);
+  }
+  return arr;
 }
 
-function prepend(i,list) {
+console.log(listToArray(arrayToList([10,20])));
 
+function prepend(element,list) {
+    return {value: element, rest: list};
 }
 
 function nth(list,num) {
-
+  
 }
 
 
