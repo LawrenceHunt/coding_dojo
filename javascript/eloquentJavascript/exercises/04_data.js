@@ -138,14 +138,14 @@ console.log(nth(arrayToList([10, 20, 30]), 1));
 */
 
 function arrayToList(arr) {
-  var list = {};
+  var list = null;
   //iterate over array backwards
   for (var i = arr.length - 1; i >= 0; i--) {
     list = {value: arr[i], rest: list};
   }
   return list;
 }
-console.log(arrayToList([10,20,30]));
+console.log(arrayToList([10,20]));
 
 
 function listToArray(list) {
