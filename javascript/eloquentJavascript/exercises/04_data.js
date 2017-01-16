@@ -163,7 +163,7 @@ function prepend(element,list) {
 }
 
 function nth(list,num) {
-  
+
 }
 
 
@@ -193,3 +193,10 @@ console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
 // → true
 
 */
+
+function deepEqual(val1, val2) {
+  if (typeof(val1) == "object" && val1 !== null && typeof(val2) == "object" && val2 !== null) {
+    return "Hello";
+  }
+  else return val1 === val2;
+}
