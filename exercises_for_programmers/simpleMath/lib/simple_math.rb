@@ -11,7 +11,7 @@ class SimpleMath
 		puts "What is the first number?"
 		@first_num = gets.chomp
 		puts "What is the second number?"
-		@sec_num = gets.chomp\
+		@sec_num = gets.chomp
 	end
 
 end
