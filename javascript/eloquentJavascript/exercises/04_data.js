@@ -18,7 +18,29 @@ step is given, the array elements go up by increments of one, corresponding
 to the old behavior. The function call range(1, 10, 2) should
 return [1, 3, 5, 7, 9]. Make sure it also works with negative step values
 so that range(5, 2, -1) produces [5, 4, 3, 2].
+*/
 
+function range (start, end) {
+  var count = start;
+  var array = [];
+  while (count <= end ) {
+    array.push(count);
+    count += 1;
+  }
+  return array;
+}
+
+function sum (array) {
+  var sum = 0;
+  for (var i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return sum;
+}
+
+console.log(sum(range(1,10)));
+
+/*
 console.log(range(1, 10));
 // → [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 console.log(range(5, 2, -1));
@@ -51,7 +73,22 @@ console.log(arrayValue);
 // → [5, 4, 3, 2, 1]
 
 */
+function reverseArray (arr) {
+  var newArr = [];
+  for (var i = arr.length - 1 ; i >= 0; i--) {
+    newArr.push(arr[i]);
+  }
+  return newArr;
+}
 
+
+function reverseArrayInPlace (arr) {
+  for (var i = 0; i < (Math.floor(arr.length / 2)); i++ ){
+    var temp = arr[i];
+    arr[i] = arr[arr.length - 1 - i];
+    arr[arr.length - 1 - i] = temp;
+  }
+}
 /*
 A list
 
@@ -100,6 +137,36 @@ console.log(nth(arrayToList([10, 20, 30]), 1));
 // → 20
 */
 
+function arrayToList(arr) {
+  var list = null;
+  //iterate over array backwards
+  for (var i = arr.length - 1; i >= 0; i--) {
+    list = {value: arr[i], rest: list};
+  }
+  return list;
+}
+console.log(arrayToList([10,20]));
+
+
+function listToArray(list) {
+  var arr = [];
+  for (var node = list; node; node = node.rest) {
+    arr.push(node.value);
+  }
+  return arr;
+}
+
+console.log(listToArray(arrayToList([10,20])));
+
+function prepend(element,list) {
+    return {value: element, rest: list};
+}
+
+function nth(list,num) {
+
+}
+
+
 /*
 Deep comparison
 
@@ -126,3 +193,10 @@ console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
 // → true
 
 */
+
+function deepEqual(val1, val2) {
+  if (typeof(val1) == "object" && val1 !== null && typeof(val2) == "object" && val2 !== null) {
+    return "Hello";
+  }
+  else return val1 === val2;
+}
