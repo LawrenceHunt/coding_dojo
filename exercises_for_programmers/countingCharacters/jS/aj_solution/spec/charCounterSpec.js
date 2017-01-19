@@ -1,11 +1,17 @@
-describe("CharCalculater", function() {
+describe("CharCounter", function() {
 
-  var calc = new CharCalculater();
+  var count = new CharCounter();
 
   it("prompts for an input string", function() {
     console.log = jasmine.createSpy('log');
-    var prompt = calc.prompt();
-    expect(console.log).toHaveBeenCalledWith(prompt);
+    count.prompt();
+    expect(console.log).toHaveBeenCalledWith("What is the input string?");
+  });
+
+  it("Stores the user input", function() {
+    count.prompt();
+    spyOn(ui, 'readline').andReturn('Homer');
+    expect(count._userString).to.equal('Homer');
   });
 
 });
