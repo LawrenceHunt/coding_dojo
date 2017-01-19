@@ -194,9 +194,22 @@ console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
 
 */
 
-function deepEqual(val1, val2) {
-  if (typeof(val1) == "object" && val1 !== null && typeof(val2) == "object" && val2 !== null) {
-    return "Hello";
+function deepEqual(x,y) {
+  if (x === y) return true;
+
+  if ((typeof x !=="object" || x === null) ||
+      (typeof y !=="object" || y === null)) {
+      return false;
   }
-  else return val1 === val2;
+  var xprops = 0, yprops = 0;
+
+  for (var prop in x) {
+    xprops ++;
+  }
+  for (prop in y) {
+    yprops ++;
+    if (!(prop in x) || !deepEqual(x[prop], y[prop]))
+      return false;
+  }
+  return xprops == yprops;
 }
